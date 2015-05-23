@@ -32,9 +32,15 @@ function handleHide() {
 }
 
 function saveList() {
-var ss = require("sdk/simple-storage");
-  ss.storage.words = "hallo,test";
-  console.log( ss.storage.words );
+    
+localStorage.setItem("triggerwords", document.getElementById("triggerlist").value);
+document.getElementById("panel").hidePopup();
+
+}
+
+function getList() {
+    document.getElementById("triggerlist").value = localStorage.getItem("triggerwords");
+    //hidePopup();
 }
 
 
