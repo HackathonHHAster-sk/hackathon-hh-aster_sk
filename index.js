@@ -6,9 +6,9 @@ var button = ToggleButton({
   id: "my-button",
   label: "my button",
   icon: {
-    "16": "./icon-16.png",
-    "32": "./icon-32.png",
-    "64": "./icon-64.png"
+    "16": "./aster_sk-16.png",
+    "32": "./aster_sk-32.png",
+    "64": "./aster_sk-64.png"
   },
   onChange: handleChange
 });
@@ -28,4 +28,10 @@ function handleChange(state) {
 
 function handleHide() {
   button.state('window', {checked: false});
+
+  var ss = require("sdk/simple-storage");
+  ss.storage.words = "hallo,test";
+  console.log( ss.storage.words );
 }
+
+
