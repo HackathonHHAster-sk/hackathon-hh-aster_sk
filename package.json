@@ -1,0 +1,12 @@
+{
+  "title": "Aster_sk",
+  "name": "astersk",
+  "version": "0.0.1",
+  "description": "A firefox plugin to prevent triggers while browsing",
+  "main": "index.js",
+  "author": "HackathonHHAster-sk",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT"
+}
