@@ -10,14 +10,16 @@
   </head>
   
   <body onload="getList();">
-<panel id="panel">
+<div id="panel">
+  <h3>Aster<img src="aster_sk-16.png" alt="icon" />sk NoTriggerList</h3>
   <p>Please put your trigger words here as comma-seperated list</p>
       <form action="#" method="post" onsubmit="saveList();">
         <textarea id="triggerlist"></textarea>
         <button type="submit"  id="save">Save</button>
         <button type="button" onclick="getList();" id="reset">Cancel</button>
       </form>
-</panel>
+  <p id="msg">List saved!</p>
+</div>
 </body>
 </html>
 
