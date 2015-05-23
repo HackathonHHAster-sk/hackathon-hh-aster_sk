@@ -29,7 +29,10 @@ function handleChange(state) {
 function handleHide() {
   button.state('window', {checked: false});
 
-  var ss = require("sdk/simple-storage");
+}
+
+function saveList() {
+var ss = require("sdk/simple-storage");
   ss.storage.words = "hallo,test";
   console.log( ss.storage.words );
 }
