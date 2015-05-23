@@ -7,6 +7,9 @@ Tutorial:
 https://developer.mozilla.org/en-US/Add-ons/SDK/Tutorials
 https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm
 
+Save data to storage:
+https://developer.mozilla.org/en-US/Add-ons/SDK/High-Level_APIs/simple-storage
+
 Activate SDK:
 cd addon-sdk-1.17/
 bash bin/activate

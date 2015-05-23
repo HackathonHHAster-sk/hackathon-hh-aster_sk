@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Aster_sk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="../index.js" type="text/javascript"></script>
+  </head>
+  
+  <body onload="getList();">
+<panel id="panel">
+  <p>Please put your trigger words here as comma-seperated list</p>
+      <form action="#" method="post" onsubmit="saveList();">
+        <textarea id="triggerlist"></textarea>
+        <button type="submit"  id="save">Save</button>
+        <button type="button" onclick="getList();" id="reset">Cancel</button>
+      </form>
+</panel>
+</body>
+</html>
+
+
+<!--
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Aster_sk</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <script src="../index.js" type="text/javascript"></script>
+  </head>
+  <body onload="getList();">
+    <div>
+
+      <p>Please put your trigger words here as comma-seperated list</p>
+      <form action="#" method="post" onsubmit="saveList();">
+        <textarea id="triggerlist"></textarea>
+        <button type="submit"  id="save">Save</button>
+        <button type="button" onclick="getList();" id="reset">Cancel</button>
+      </form>
+    </div>
+  </body>
+</html>
+
+-->
+<!--
+<panel id="thepanel">
+  <hbox align="start">
+    <image src="warning.png"/>
+    <vbox>
+      <description value="You have 6 new messages."/>
+      <hbox>
+        <button label="Read Mail"/>
+        <button label="New Message"/>
+      </hbox>
+    </vbox>
+  </hbox>
+</panel>
+<description value="6 New Messages" popup="thepanel"/>
+
+-->
+
