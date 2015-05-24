@@ -10,7 +10,11 @@ var ss = require("sdk/simple-storage");
 pageMod.PageMod({
   include: "*",
   contentScriptFile: [data.url("jquery.min.js"),
-                      data.url("runner.js")]
+                      data.url("runner.js")],
+    onAttach: function(worker) {
+        worker.port.emit("triggerwords", ss.storage.triggerwords);
+    }
+
 });
 
 var button = ToggleButton({
@@ -47,7 +51,6 @@ function handleChange(state) {
 });*/
 
 panel.port.on("text-saved", function (text) {
-  console.log(text);
+  ss.storage.triggerwords = text;
   panel.hide();
 });
-

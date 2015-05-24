@@ -1,22 +1,20 @@
 $(function() {
-	
-	console.log(localStorage.getItem("triggerwords"));
-	console.log("************");
-	console.log(ss.storage.value);
 
-	var input = "Sierra,Leone,und";
-	var inputArray = input.split(",");
+    self.port.on('triggerwords', function(input) {
 
-	
-	
-	for (var i = 0;i<inputArray.length;i++) {
+        //var input = "Sierra,Leone,und";
+        var inputArray = input.split(",");
 
-		var replacement = asterisk(inputArray[i]);
+        for (var i = 0;i<inputArray.length;i++) {
 
-		$('body').textWalk(function() {
-    		this.data = this.data.replace(inputArray[i],replacement);
-		});
-	}
+            var replacement = asterisk(inputArray[i]);
+
+            $('body').textWalk(function() {
+                this.data = this.data.replace(inputArray[i],replacement);
+            });
+        }
+
+    });
 	
 });
 
