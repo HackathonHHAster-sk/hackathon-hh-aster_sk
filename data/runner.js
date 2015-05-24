@@ -1,10 +1,11 @@
+
 $(function() {
 	
-	console.log(localStorage.getItem("triggerwords"));
+self.port.on("sendStorage", function getStorage(storage) {
 	console.log("************");
-	console.log(ss.storage.value);
+	console.log("in runner.js:" + storage);
 
-	var input = "Sierra,Leone,und";
+	var input = storage;
 	var inputArray = input.split(",");
 
 	
@@ -17,6 +18,8 @@ $(function() {
     		this.data = this.data.replace(inputArray[i],replacement);
 		});
 	}
+});
+	
 	
 });
 

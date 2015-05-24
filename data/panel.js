@@ -10,10 +10,11 @@ form.addEventListener('submit', function onsubmit(event) {
 }, false);
 
 
-/*self.port.on("show", function onShow() {
-	//alert("fu!");
-  //textArea.focus();
-});*/
+self.port.on("show", function onShow(storage) {
+	textArea.value = storage;
+  	//textArea.focus();
+});
+
 /*
 function getList() {
     document.getElementById("triggerlist").value = localStorage.getItem("triggerwords");
