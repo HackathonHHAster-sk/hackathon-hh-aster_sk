@@ -10,7 +10,11 @@ var ss = require("sdk/simple-storage");
 pageMod.PageMod({
   include: "*",
   contentScriptFile: [data.url("jquery.min.js"),
-                      data.url("runner.js")]
+                      data.url("runner.js")],
+  onAttach: function(worker){
+  	var storage = ss.storage.triggerList;
+  	worker.port.emit("sendStorage", storage);
+  }
 });
 
 var button = ToggleButton({
@@ -42,12 +46,15 @@ function handleChange(state) {
   }
 }
 
-/*panel.on("show", function() {
-  panel.port.emit("show");
-});*/
+panel.on("show", function() {
+  var storage = ss.storage.triggerList;
+  panel.port.emit("show",storage);
+});
 
 panel.port.on("text-saved", function (text) {
   console.log(text);
+  ss.storage.triggerList = text;
+  console.log("from storage: " + ss.storage.triggerList);
   panel.hide();
 });
 
