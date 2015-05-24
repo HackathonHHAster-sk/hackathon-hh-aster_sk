@@ -42,9 +42,9 @@ function handleChange(state) {
   }
 }
 
-panel.on("show", function() {
+/*panel.on("show", function() {
   panel.port.emit("show");
-});
+});*/
 
 panel.port.on("text-saved", function (text) {
   console.log(text);
