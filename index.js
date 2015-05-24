@@ -52,9 +52,6 @@ panel.on("show", function() {
 });
 
 panel.port.on("text-saved", function (text) {
-  console.log(text);
   ss.storage.triggerList = text;
-  console.log("from storage: " + ss.storage.triggerList);
   panel.hide();
 });
-
