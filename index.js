@@ -5,6 +5,7 @@ var pageMod = require("sdk/page-mod");
 var data = require("sdk/self").data;
 var { ToggleButton } = require('sdk/ui/button/toggle');
 var panels = require("sdk/panel");
+var ss = require("sdk/simple-storage");
 
 pageMod.PageMod({
   include: "*",
@@ -23,8 +24,13 @@ var button = ToggleButton({
   onChange: handleChange
 });
 
+function handleHide() {
+  button.state('window', {checked: false});
+}
+
 var panel = panels.Panel({
   contentURL: self.data.url("panel.html"),
+  contentScriptFile: self.data.url("panel.js"),
   onHide: handleHide
 });
 
@@ -36,20 +42,12 @@ function handleChange(state) {
   }
 }
 
-function handleHide() {
-  button.state('window', {checked: false});
+panel.on("show", function() {
+  panel.port.emit("show");
+});
 
-}
-
-function saveList() {
-    
-localStorage.setItem("triggerwords", document.getElementById("triggerlist").value);
-document.getElementById("panel").hidePopup();
-
-}
-
-function getList() {
-    document.getElementById("triggerlist").value = localStorage.getItem("triggerwords");
-    //hidePopup();
-}
+panel.port.on("text-saved", function (text) {
+  console.log(text);
+  panel.hide();
+});
 

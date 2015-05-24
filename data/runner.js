@@ -1,6 +1,8 @@
 $(function() {
 	
-	
+	console.log(localStorage.getItem("triggerwords"));
+	console.log("************");
+	console.log(ss.storage.value);
 
 	var input = "Sierra,Leone,und";
 	var inputArray = input.split(",");
@@ -15,7 +17,6 @@ $(function() {
     		this.data = this.data.replace(inputArray[i],replacement);
 		});
 	}
-
 	
 });
 
@@ -28,11 +29,11 @@ function asterisk (input) {
 	for (var i = 0;i<splittedInputLength;i++) {
 		if ( i == 0 || i == splittedInputLength-1){
 			newChar = splittedInput[i];
-			console.log(newChar);
+			//console.log(newChar);
 		}
 		else {
 			newChar = '*';
-			console.log(newChar);
+			//console.log(newChar);
 		}
 		newStringArray.push(newChar);
 	}
